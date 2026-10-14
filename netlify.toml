@@ -1,0 +1,13 @@
+[build]
+  publish = "public"
+  command = "npm run build && node scripts/netlify-config.mjs"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "no-referrer"
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "default-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"

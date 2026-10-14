@@ -1,0 +1,28 @@
+{
+  "name": "praxis-os",
+  "version": "0.4.2-phase-a",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "build:ui": "tailwindcss -i vendor/tailadmin/style.css -o public/tailadmin.css --minify",
+    "test:e2e": "playwright test",
+    "build": "npm run build:ui"
+  },
+  "dependencies": {
+    "https-proxy-agent": "^9.1.0",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/forms": "^0.5.11",
+    "tailwindcss": "^4.3.3"
+  }
+}

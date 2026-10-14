@@ -1,0 +1,29 @@
+[Unit]
+Description=Ollama local research only
+After=network-online.target
+Wants=network-online.target
+[Service]
+User=ollama
+Group=ollama
+ExecStart=/usr/local/bin/ollama serve
+Environment=OLLAMA_HOST=127.0.0.1:11434
+Environment=OLLAMA_MODELS=/var/lib/ollama/models
+Environment=OLLAMA_NUM_PARALLEL=1
+Environment=OLLAMA_MAX_LOADED_MODELS=1
+Environment=OLLAMA_CONTEXT_LENGTH=2048
+Environment=OLLAMA_KEEP_ALIVE=2m
+Environment=OLLAMA_NO_CLOUD=1
+Restart=always
+RestartSec=5
+MemoryHigh=2500M
+MemoryMax=3G
+CPUQuota=100%
+Nice=10
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/ollama
+[Install]
+WantedBy=multi-user.target

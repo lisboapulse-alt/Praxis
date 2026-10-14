@@ -1,0 +1,11 @@
+[Unit]
+Description=PRAXIS SQLite online backup
+[Service]
+Type=oneshot
+User=praxis
+Group=praxis
+EnvironmentFile=/etc/praxis/praxis.env
+WorkingDirectory=/opt/praxis
+ExecStart=/bin/bash /opt/praxis/ops/backup.sh /var/backups/praxis
+UMask=0077
+NoNewPrivileges=true

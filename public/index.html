@@ -1,0 +1,1236 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#465fff" />
+    <meta
+      name="description"
+      content="PRAXIS OS — Console experimental de trading multi-broker (apenas paper/sandbox)."
+    />
+    <title>PRAXIS OS | Trading Intelligence</title>
+    <link rel="stylesheet" href="/tailadmin.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.js"></script>
+    <script type="module" src="/modules.js"></script>
+  </head>
+  <body>
+    <div id="login" class="login-wrap">
+      <div class="login-card">
+        <div class="login-mark" aria-hidden="true">P</div>
+        <p class="eyebrow">PRIVATE SYSTEM · PRAXIS OS</p>
+        <h1>Aceder à consola</h1>
+        <p class="muted">
+          Ambiente experimental de investigação e paper trading. Autenticação
+          obrigatória.
+        </p>
+        <form id="login-form" class="login-form">
+          <label for="admin-password">Palavra-passe de administrador</label>
+          <input
+            type="password"
+            id="admin-password"
+            autocomplete="current-password"
+            required
+            minlength="24"
+            placeholder="Palavra-passe privada do servidor"
+          />
+          <button class="btn primary full" type="submit">
+            <span data-icon="lock"></span> Entrar no PRAXIS
+          </button>
+          <p class="form-message" id="login-message" role="status"></p>
+        </form>
+        <div class="login-foot">
+          <span class="dot dot-blue"></span> API sandbox/paper · Ordens
+          automáticas desativadas
+        </div>
+      </div>
+    </div>
+
+    <div id="app" class="shell" hidden>
+      <div id="mobile-shade" class="mobile-shade" hidden></div>
+      <aside class="sidebar" id="sidebar" aria-label="Menu principal">
+        <div class="sidebar-header sidebar-brand">
+          <div class="logo-mark">P</div>
+          <div class="brand-copy">
+            <strong>PRAXIS<span>OS</span></strong
+            ><small>TRADING INTELLIGENCE</small>
+          </div>
+          <button
+            class="sidebar-close icon-button mobile-only"
+            id="close-menu"
+            aria-label="Fechar menu"
+          >
+            ×
+          </button>
+        </div>
+        <div class="menu-group-title sidebar-group-title">MENU PRINCIPAL</div>
+        <nav class="nav-list" aria-label="Secções">
+          <button
+            class="menu-item menu-item-inactive nav-item active"
+            data-view="overview"
+          >
+            <span data-icon="grid"></span> Visão geral
+          </button>
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="executor"
+          >
+            <span data-icon="shield"></span> Trading Terminal
+          </button>
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="operations"
+          >
+            <span data-icon="activity"></span> Orders
+          </button>
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="strategies"
+          >
+            <span data-icon="layers"></span> Estratégias
+          </button>
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="markets"
+          >
+            <span data-icon="chart"></span> Markets
+          </button>
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="portfolio"
+          >
+            <span data-icon="wallet"></span> Portfolio
+          </button>
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="backtesting"
+          >
+            <span data-icon="chart"></span> Backtesting
+          </button>
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="risk"
+          >
+            <span data-icon="shield"></span> Controlo Demo
+          </button>
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="research"
+          >
+            <span data-icon="brain"></span> AI Research
+          </button>
+        </nav>
+        <div class="menu-group-title sidebar-group-title second-group">
+          SISTEMA
+        </div>
+        <nav class="nav-list" aria-label="Sistema">
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="integrations"
+          >
+            <span data-icon="key"></span> Broker Connections
+            <span id="integration-dot" class="status-mini"></span>
+          </button>
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="monitor"
+          >
+            <span data-icon="activity"></span> System Monitor
+          </button>
+          <button
+            class="menu-item menu-item-inactive nav-item"
+            data-view="settings"
+          >
+            <span data-icon="settings"></span> Configurações
+          </button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <span class="dot dot-blue"></span><b>LABORATÓRIO</b
+            ><small>PRAXIS OS · v0.4.1</small
+            ><small>Produção / ordens reais: bloqueadas</small>
+          </div>
+          <button
+            class="menu-item menu-item-inactive nav-item signout"
+            id="logout"
+          >
+            <span data-icon="logout"></span> Terminar sessão
+          </button>
+        </div>
+      </aside>
+      <div class="workspace">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button
+              class="icon-button mobile-only"
+              id="menu-toggle"
+              aria-label="Abrir menu"
+            >
+              <span data-icon="menu"></span></button
+            ><span class="breadcrumb">PRAXIS OS</span
+            ><span class="crumb-sep">/</span
+            ><span id="breadcrumb-view">Visão geral</span>
+          </div>
+          <div class="topbar-right">
+            <span class="badge badge-paper">● PAPER / SANDBOX</span
+            ><button
+              id="refresh"
+              class="icon-button"
+              title="Atualizar informações"
+            >
+              <span data-icon="refresh"></span></button
+            ><button
+              id="theme-toggle"
+              class="icon-button"
+              title="Alternar tema"
+            >
+              <span data-icon="moon"></span>
+            </button>
+            <div class="avatar">PT</div>
+          </div>
+        </header>
+        <main class="main">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">PRAXIS · CONTROL CENTER</p>
+              <h1 id="page-title">Visão geral</h1>
+              <p class="subtitle" id="page-subtitle">
+                Monitorização, risco e infraestrutura de trading experimental.
+              </p>
+            </div>
+            <div class="heading-actions">
+              <span class="heartbeat"
+                ><span class="dot dot-green"></span> Modo seguro</span
+              ><button class="btn outline" id="go-integrations">
+                <span data-icon="plug"></span> Ligar API
+              </button>
+            </div>
+          </div>
+          <div
+            id="toast"
+            class="toast"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+          <section class="view" id="view-overview">
+            <div class="safety-banner">
+              <span data-icon="shield"></span>
+              <div>
+                <strong>Ambiente exclusivamente experimental</strong
+                ><span
+                  >Apenas negociação Paper/Sandbox. Sem tetos artificiais de
+                  exposição, perdas ou número de ordens.</span
+                >
+              </div>
+              <span id="overview-mode-badge" class="badge badge-outline"
+                >DISARMED</span
+              >
+            </div>
+            <div class="metric-grid">
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span>Equity · Paper</span
+                  ><span class="metric-icon" data-icon="wallet"></span>
+                </div>
+                <strong id="metric-equity">—</strong
+                ><small id="metric-equity-note"
+                  >Aguarda ligação Alpaca Paper</small
+                >
+              </article>
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span>Cash · Paper</span
+                  ><span class="metric-icon" data-icon="coin"></span>
+                </div>
+                <strong id="metric-cash">—</strong
+                ><small id="metric-cash-note">Sem dados de corretora</small>
+              </article>
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span>Posições abertas</span
+                  ><span class="metric-icon" data-icon="chart"></span>
+                </div>
+                <strong id="metric-positions">—</strong
+                ><small id="metric-positions-note"
+                  >A partir da API autenticada</small
+                >
+              </article>
+              <article class="metric-card">
+                <div class="metric-top">
+                  <span>Ordens recentes</span
+                  ><span class="metric-icon" data-icon="layers"></span>
+                </div>
+                <strong id="metric-orders">—</strong
+                ><small id="metric-orders-note"
+                  >Últimas 20 ordens do broker</small
+                >
+              </article>
+            </div>
+            <div class="metric-grid">
+              <article class="metric-card">
+                <div class="metric-top">P&L não realizado</div>
+                <strong id="metric-pnl">—</strong
+                ><small>Posições reportadas pelo broker</small>
+              </article>
+              <article class="metric-card">
+                <div class="metric-top">Exposição bruta</div>
+                <strong id="metric-exposure">—</strong
+                ><small>Valor de mercado absoluto / equity</small>
+              </article>
+              <article class="metric-card">
+                <div class="metric-top">Buying power</div>
+                <strong id="metric-buying-power">—</strong
+                ><small>Disponibilidade reportada pelo broker</small>
+              </article>
+              <article class="metric-card">
+                <div class="metric-top">Broker selecionado</div>
+                <strong id="metric-active-broker" style="font-size: 16px"
+                  >—</strong
+                ><small id="metric-experiment"
+                  >Experiência ainda não iniciada</small
+                >
+              </article>
+            </div>
+            <div class="dashboard-grid">
+              <section class="panel panel-chart">
+                <div class="panel-heading">
+                  <div>
+                    <div class="panel-eyebrow">PERFORMANCE LAB</div>
+                    <h2>Curva de equity</h2>
+                    <p id="chart-subtitle" class="muted">
+                      Aguardar snapshots reais de equity da conta ligada
+                    </p>
+                  </div>
+                  <div
+                    class="pill-group"
+                    role="group"
+                    aria-label="Período do gráfico"
+                  >
+                    <button class="period active" data-period="7">7D</button
+                    ><button class="period" data-period="30">30D</button
+                    ><button class="period" data-period="90">90D</button>
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <span
+                    ><i class="legend-square"></i> Dados reais guardados</span
+                  ><span class="badge badge-outline">PAPER</span>
+                </div>
+                <div
+                  id="equity-chart"
+                  class="svg-chart"
+                  role="img"
+                  aria-label="Equity de snapshots registados"
+                ></div>
+                <div class="axis-labels">
+                  <span>Início</span><span id="chart-period-label">7 dias</span
+                  ><span>Agora</span>
+                </div>
+              </section>
+              <section class="panel health-panel">
+                <div class="panel-heading">
+                  <div>
+                    <div class="panel-eyebrow">SYSTEM HEALTH</div>
+                    <h2>Estado do sistema</h2>
+                  </div>
+                  <span class="health-ring"
+                    ><span data-icon="activity"></span
+                  ></span>
+                </div>
+                <div class="status-row">
+                  <div>
+                    <span class="tiny-mark blue"></span><b>Motor de execução</b
+                    ><small>Estado controlado pelo executor Paper</small>
+                  </div>
+                  <span id="overview-engine-badge" class="badge badge-gray"
+                    >DESARMADO</span
+                  >
+                </div>
+                <div class="status-row">
+                  <div>
+                    <span class="tiny-mark green"></span><b>Demo Engine</b
+                    ><small>Sem limites financeiros locais</small>
+                  </div>
+                  <span class="badge badge-paper">DEMO</span>
+                </div>
+                <div class="status-row">
+                  <div>
+                    <span class="tiny-mark blue"></span
+                    ><b>Alpaca Trading Paper</b
+                    ><small id="trading-status-note">Por configurar</small>
+                  </div>
+                  <span id="trading-status-badge" class="badge badge-gray"
+                    >OFFLINE</span
+                  >
+                </div>
+                <div class="status-row">
+                  <div>
+                    <span class="tiny-mark blue"></span
+                    ><b>Alpaca Broker Sandbox</b
+                    ><small id="broker-status-note">Por configurar</small>
+                  </div>
+                  <span id="broker-status-badge" class="badge badge-gray"
+                    >OFFLINE</span
+                  >
+                </div>
+                <button class="text-button" id="health-connect">
+                  Gerir ligações API <span data-icon="arrow"></span>
+                </button>
+              </section>
+            </div>
+            <div class="bottom-grid">
+              <section class="panel">
+                <div class="panel-heading">
+                  <div>
+                    <div class="panel-eyebrow">EXECUTION MONITOR</div>
+                    <h2>Ordens recentes</h2>
+                  </div>
+                  <button class="text-button" data-nav="operations">
+                    Ver operações <span data-icon="arrow"></span>
+                  </button>
+                </div>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Ativo</th>
+                        <th>Lado</th>
+                        <th>Quantidade</th>
+                        <th>Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody id="overview-orders">
+                      <tr>
+                        <td class="empty-cell" colspan="4">
+                          Liga a Alpaca Trading Paper para consultar ordens.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+              <section class="panel">
+                <div class="panel-heading">
+                  <div>
+                    <div class="panel-eyebrow">DEMO CONTROLS</div>
+                    <h2>Controlo de execução demo</h2>
+                  </div>
+                  <span class="badge badge-green">DEMO</span>
+                </div>
+                <div class="risk-label">
+                  <span>Ordens reais</span><b>BLOQUEADAS</b>
+                </div>
+                <div class="risk-track"><span style="width: 100%"></span></div>
+                <p class="muted">
+                  Sem limites financeiros artificiais. O broker valida fundos,
+                  permissões e horários; ordens duplicadas são impedidas por
+                  identificador de sinal.
+                </p>
+                <div class="risk-info">
+                  <span data-icon="lock"></span> Apenas modo Paper/Sandbox
+                </div>
+                <div class="risk-info">
+                  <span data-icon="shield"></span> As credenciais ficam cifradas
+                  fora do browser
+                </div>
+                <button class="text-button" data-nav="risk">
+                  Ver controlos Demo <span data-icon="arrow"></span>
+                </button>
+              </section>
+            </div>
+          </section>
+
+          <section class="view" id="view-executor" hidden>
+            <div class="section-intro">
+              <h2>Executor Paper</h2>
+              <p>
+                Controlo de simulações Alpaca. Nenhuma ordem real pode ser
+                executada nesta versão.
+              </p>
+            </div>
+            <div class="panel">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-eyebrow">STATE MACHINE</div>
+                  <h2>Motor de execução</h2>
+                </div>
+                <span class="badge badge-gray" id="exec-badge">DESARMADO</span>
+              </div>
+              <div class="runtime-summary" id="runtime-summary">
+                A consultar estado real…
+              </div>
+              <div class="exec-fields">
+                <div>
+                  <label for="exec-broker">Broker sandbox</label
+                  ><select id="exec-broker">
+                    <option value="alpaca-trading-paper">
+                      Alpaca Trading Paper
+                    </option>
+                    <option value="alpaca-broker-sandbox">
+                      Alpaca Broker Sandbox
+                    </option>
+                  </select>
+                </div>
+                <div>
+                  <label for="exec-account">Conta autorizada</label
+                  ><select id="exec-account">
+                    <option value="">Selecionar após consultar contas</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="exec-mode">Modo</label
+                  ><select id="exec-mode">
+                    <option value="MANUAL_PAPER">
+                      Paper manual (preparação)
+                    </option>
+                    <option value="AUTO_PAPER">
+                      Paper automático SMA versionada
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="exec-actions">
+                <button class="btn outline" id="exec-load">
+                  Descobrir contas</button
+                ><button class="btn primary" id="exec-arm">Armar Paper</button
+                ><button class="btn outline" id="exec-reconcile">
+                  Reconciliar ordens</button
+                ><button class="btn danger-ghost" id="exec-stop">
+                  PARAR ORDENS
+                </button>
+              </div>
+              <p class="form-message" id="exec-message" role="status"></p>
+            </div>
+            <div class="panel gap-top">
+              <div class="panel-heading">
+                <h2>Bilhete de ordem fictícia</h2>
+                <span class="badge badge-outline">TRADING PAPER ONLY</span>
+              </div>
+              <p class="muted">
+                Requer motor MANUAL_PAPER armado. O broker Demo/Paper valida
+                horários, fundos e permissões.
+              </p>
+              <form id="manual-order-form" class="key-form">
+                <div class="exec-fields">
+                  <div>
+                    <label for="manual-symbol">Símbolo</label
+                    ><input
+                      id="manual-symbol"
+                      value="AAPL"
+                      required
+                      pattern="[A-Za-z][A-Za-z0-9.]{0,12}"
+                      maxlength="13"
+                    />
+                  </div>
+                  <div>
+                    <label for="manual-qty">Quantidade inteira</label
+                    ><input
+                      id="manual-qty"
+                      type="number"
+                      min="1"
+                      step="1"
+                      value="1"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="manual-side">Operação</label
+                    ><select id="manual-side">
+                      <option value="buy">Comprar Paper</option>
+                      <option value="sell">Vender posição Paper</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" class="btn outline">
+                  Validar risco e enviar ordem fictícia
+                </button>
+                <p id="manual-message" class="form-message" role="status"></p>
+              </form>
+            </div>
+            <div class="panel gap-top">
+              <div class="panel-heading">
+                <h2>Diário transacional de ordens</h2>
+                <span class="badge badge-outline">SEM DADOS FICTÍCIOS</span>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Símbolo</th>
+                      <th>Lado</th>
+                      <th>Qtd.</th>
+                      <th>Estado</th>
+                      <th>Client ID</th>
+                      <th>UTC</th>
+                    </tr>
+                  </thead>
+                  <tbody id="executor-orders">
+                    <tr>
+                      <td colspan="6" class="empty-cell">
+                        Sem ordens registadas.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="view" id="view-operations" hidden>
+            <div class="section-intro">
+              <h2>Operações · Paper</h2>
+              <p>
+                Para liquidar: suspender AUTO, armar MANUAL_PAPER e confirmar
+                cancelamentos pendentes. As posições e ordens só aparecem após
+                selecionar e validar uma conta Paper/Sandbox.
+              </p>
+            </div>
+            <div class="panel">
+              <div class="panel-heading">
+                <h2>Posições abertas</h2>
+                <div class="exec-actions">
+                  <button id="cancel-all-orders" class="btn outline">
+                    Cancelar ordens pendentes</button
+                  ><button id="liquidate-all" class="btn primary">
+                    Liquidar todas as posições
+                  </button>
+                </div>
+                <span class="badge badge-outline">READ ONLY</span>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Símbolo</th>
+                      <th>Posição</th>
+                      <th>Qtd.</th>
+                      <th>Valor de mercado</th>
+                      <th>P&L não realizado</th>
+                      <th>Ação</th>
+                    </tr>
+                  </thead>
+                  <tbody id="positions-table">
+                    <tr>
+                      <td class="empty-cell" colspan="6">Ainda sem dados.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="panel gap-top">
+              <div class="panel-heading">
+                <h2>Histórico de ordens</h2>
+                <input
+                  id="order-filter"
+                  aria-label="Filtrar ordens"
+                  placeholder="Símbolo ou estado"
+                  class="table-filter"
+                /><span class="badge badge-outline">READ ONLY</span>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Ativo</th>
+                      <th>Lado</th>
+                      <th>Quantidade</th>
+                      <th>Tipo</th>
+                      <th>Estado</th>
+                      <th>Data / ação</th>
+                    </tr>
+                  </thead>
+                  <tbody id="orders-table">
+                    <tr>
+                      <td class="empty-cell" colspan="6">Ainda sem dados.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section class="view" id="view-integrations" hidden>
+            <div class="section-intro">
+              <h2>Ligações API</h2>
+              <p>
+                Introduz as credenciais, clica em <b>Guardar e ativar</b> e a
+                consola testa a ligação. Só depois guarda os dados cifrados na
+                base local da VM.
+              </p>
+            </div>
+            <div class="info-strip">
+              <span data-icon="lock"></span> Nunca guardamos chaves em
+              localStorage ou JavaScript público. Após ativação só aparecem os
+              últimos caracteres da API key.
+            </div>
+            <div class="integration-grid">
+              <article class="panel integration-card">
+                <div class="integration-heading">
+                  <div class="broker-emblem alpaca">A</div>
+                  <div>
+                    <h2>Alpaca Trading API</h2>
+                    <span class="muted"
+                      >Paper Trading · ações dos EUA (IEX)</span
+                    >
+                  </div>
+                  <span id="paper-badge" class="badge badge-gray push-right"
+                    >DESLIGADO</span
+                  >
+                </div>
+                <div class="broker-meta">
+                  <span>ENDPOINT</span><code>paper-api.alpaca.markets</code>
+                </div>
+                <div class="connected-box" id="paper-connected" hidden>
+                  <div>
+                    <strong id="paper-masked">••••</strong
+                    ><small id="paper-checked"></small>
+                  </div>
+                  <span class="badge badge-green">ATIVA</span>
+                </div>
+                <form id="form-paper" class="key-form" autocomplete="off">
+                  <label for="paper-key">API Key ID</label
+                  ><input
+                    id="paper-key"
+                    type="text"
+                    required
+                    maxlength="512"
+                    spellcheck="false"
+                    autocomplete="off"
+                    placeholder="Introduz a Paper API Key"
+                  /><label for="paper-secret">Secret Key</label>
+                  <div class="secret-field">
+                    <input
+                      id="paper-secret"
+                      type="password"
+                      required
+                      maxlength="512"
+                      autocomplete="off"
+                      placeholder="Introduz a Paper Secret Key"
+                    /><button
+                      type="button"
+                      class="reveal"
+                      data-reveal="paper-secret"
+                      aria-label="Mostrar ou ocultar secret"
+                    >
+                      <span data-icon="eye"></span>
+                    </button>
+                  </div>
+                  <button
+                    class="btn primary full"
+                    type="submit"
+                    id="paper-activate"
+                  >
+                    <span data-icon="plug"></span> Guardar e ativar
+                  </button>
+                </form>
+                <div class="integration-actions">
+                  <button class="btn outline small" id="paper-toggle" disabled>
+                    Desativar</button
+                  ><button class="btn outline small" id="paper-verify" disabled>
+                    Verificar ligação</button
+                  ><button
+                    class="btn danger-ghost small"
+                    id="paper-delete"
+                    disabled
+                  >
+                    Remover credenciais
+                  </button>
+                </div>
+                <p class="form-message" id="paper-message" role="status"></p>
+              </article>
+              <article class="panel integration-card">
+                <div class="integration-heading">
+                  <div class="broker-emblem alpaca">A</div>
+                  <div>
+                    <h2>Alpaca Broker API</h2>
+                    <span class="muted"
+                      >Sandbox · infraestrutura de corretagem</span
+                    >
+                  </div>
+                  <span id="broker-badge" class="badge badge-gray push-right"
+                    >DESLIGADO</span
+                  >
+                </div>
+                <div class="broker-meta">
+                  <span>ENDPOINT</span
+                  ><code>broker-api.sandbox.alpaca.markets</code>
+                </div>
+                <div class="connected-box" id="broker-connected" hidden>
+                  <div>
+                    <strong id="broker-masked">••••</strong
+                    ><small id="broker-checked"></small>
+                  </div>
+                  <span class="badge badge-green">ATIVA</span>
+                </div>
+                <form id="form-broker" class="key-form" autocomplete="off">
+                  <label for="broker-key">Broker API Key</label
+                  ><input
+                    id="broker-key"
+                    type="text"
+                    maxlength="512"
+                    required
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="Introduz a Broker API Key"
+                  /><label for="broker-secret">Broker Secret</label>
+                  <div class="secret-field">
+                    <input
+                      id="broker-secret"
+                      type="password"
+                      maxlength="512"
+                      required
+                      autocomplete="off"
+                      placeholder="Introduz o Broker Secret"
+                    /><button
+                      type="button"
+                      class="reveal"
+                      data-reveal="broker-secret"
+                      aria-label="Mostrar ou ocultar secret"
+                    >
+                      <span data-icon="eye"></span>
+                    </button>
+                  </div>
+                  <label for="broker-auth">Método de autenticação Broker</label>
+                  <select id="broker-auth">
+                    <option value="legacy-basic">Basic — keys existentes</option>
+                    <option value="oauth">OAuth Client Credentials — recomendado para novas contas</option>
+                  </select>
+                  <button
+                    class="btn primary full"
+                    type="submit"
+                    id="broker-activate"
+                  >
+                    <span data-icon="plug"></span> Guardar e ativar
+                  </button>
+                </form>
+                <div class="integration-actions">
+                  <button class="btn outline small" id="broker-toggle" disabled>
+                    Desativar</button
+                  ><button
+                    class="btn outline small"
+                    id="broker-verify"
+                    disabled
+                  >
+                    Verificar ligação</button
+                  ><button
+                    class="btn danger-ghost small"
+                    id="broker-delete"
+                    disabled
+                  >
+                    Remover credenciais
+                  </button>
+                </div>
+                <p class="form-message" id="broker-message" role="status"></p>
+              </article>
+            </div>
+          </section>
+          <section class="view" id="view-strategies" hidden>
+            <div class="section-intro">
+              <h2>Strategy Engine</h2>
+              <p>
+                SMA é uma baseline de infraestrutura. Parâmetros e decisões
+                ficam versionados; rentabilidade não comprovada.
+              </p>
+            </div>
+            <div class="panel">
+              <h2>SMA crossover · Long / Flat</h2>
+              <form id="strategy-form" class="key-form gap-top">
+                <div class="exec-fields">
+                  <div>
+                    <label for="strategy-fast">SMA rápida</label
+                    ><input
+                      id="strategy-fast"
+                      type="number"
+                      min="2"
+                      value="5"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="strategy-slow">SMA lenta</label
+                    ><input
+                      id="strategy-slow"
+                      type="number"
+                      min="3"
+                      max="500"
+                      value="20"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="strategy-quantity">Unidades por compra</label
+                    ><input
+                      id="strategy-quantity"
+                      type="number"
+                      min="1"
+                      value="1"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="strategy-symbol">Símbolo automático</label
+                    ><input id="strategy-symbol" value="AAPL" required />
+                  </div>
+                </div>
+                <button class="btn primary">
+                  Guardar versão (motor desarmado)
+                </button>
+                <p id="strategy-message" class="form-message" role="status"></p>
+              </form>
+              <div id="strategy-versions" class="gap-top"></div>
+            </div>
+            <div class="panel gap-top">
+              <h2>Sinais e features registados</h2>
+              <div id="strategy-signals" class="gap-top table-wrap"></div>
+            </div>
+          </section>
+          <section class="view" id="view-risk" hidden>
+            <div class="section-intro">
+              <h2>Controlo Demo</h2>
+              <p>
+                Negociação experimental sem limites financeiros locais. Mantém o
+                histórico, autenticação e botão Parar.
+              </p>
+            </div>
+            <div class="feature-grid">
+              <article class="panel feature-card">
+                <span data-icon="shield"></span>
+                <h3>Kill switch</h3>
+                <p>
+                  Botão de desarme persistente. O motor pode ser parado a
+                  qualquer momento; as ordens fictícias anteriores mantêm-se.
+                </p>
+                <span id="risk-kill-state" class="badge badge-gray"
+                  >A VERIFICAR</span
+                >
+              </article>
+              <article class="panel feature-card">
+                <span data-icon="lock"></span>
+                <h3>Segredos isolados</h3>
+                <p>
+                  Chaves cifradas AES-256-GCM no backend da VM, com segredo fora
+                  do repositório.
+                </p>
+                <span class="badge badge-green">PREPARADO</span>
+              </article>
+            </div>
+          </section>
+          <section class="view" id="view-research" hidden>
+            <div class="section-intro">
+              <h2>AI Research Lab</h2>
+              <p>
+                Investigação opcional com modelo Ollama local isolado do motor
+                de execução.
+              </p>
+            </div>
+            <div class="panel">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-eyebrow">EXPERIMENTAL</div>
+                  <h2>Ollama · Qwen3 1.7B</h2>
+                </div>
+                <span id="ollama-health" class="badge badge-gray"
+                  >A VERIFICAR</span
+                >
+              </div>
+              <p class="muted">
+                O modelo não gera ordens nem modifica risco. Analisa texto com
+                qwen3:1.7b quando o serviço local estiver disponível.
+              </p>
+              <div class="research-flow">
+                <span>INPUT DATA</span><span data-icon="arrow"></span
+                ><span>FEATURES</span><span data-icon="arrow"></span
+                ><span>BACKTEST OOS</span><span data-icon="arrow"></span
+                ><span>COMPARAÇÃO</span>
+              </div>
+              <form id="ollama-research-form" class="key-form gap-top">
+                <label for="research-kind">Tarefa</label
+                ><select id="research-kind">
+                  <option value="economic_context">Contexto económico</option>
+                  <option value="news_classification">
+                    Classificação de notícias
+                  </option>
+                  <option value="strategy_explanation">
+                    Explicar estratégia
+                  </option>
+                  <option value="performance_report">
+                    Relatório de desempenho
+                  </option>
+                  <option value="hypotheses">
+                    Hipóteses de investigação
+                  </option></select
+                ><label for="ollama-prompt"
+                  >Texto para análise local (sem dados confidenciais)</label
+                ><textarea
+                  id="ollama-prompt"
+                  rows="4"
+                  maxlength="6000"
+                  placeholder="Insere um pequeno excerto económico para classificar. Não produz ordens."
+                ></textarea
+                ><button type="submit" class="btn primary">
+                  Analisar com Ollama
+                </button>
+                <p class="muted">
+                  Resultados experimentais sujeitos a revisão: o benchmark local
+                  identificou erros factuais de política monetária neste modelo.
+                </p>
+                <pre
+                  id="ollama-answer"
+                  class="runtime-summary"
+                  style="white-space: pre-wrap"
+                ></pre>
+              </form>
+            </div>
+          </section>
+          <section class="view" id="view-settings" hidden>
+            <div class="section-intro">
+              <h2>Configurações</h2>
+              <p>Personalização da experiência e estado de segurança.</p>
+            </div>
+            <div class="panel settings-panel">
+              <div class="setting-row">
+                <div>
+                  <b>Aparência</b>
+                  <p class="muted">
+                    Usar o esquema original TailAdmin claro ou escuro.
+                  </p>
+                </div>
+                <button class="btn outline" id="settings-theme">
+                  Alternar modo
+                </button>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <b>Execução automática</b>
+                  <p class="muted">
+                    Disponível apenas em contas Paper validadas; sem limites
+                    financeiros artificiais.
+                  </p>
+                </div>
+                <span class="badge badge-gray">DISPONÍVEL APÓS LIGAÇÃO</span>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <b>Armazenamento de credenciais</b>
+                  <p class="muted">
+                    Credenciais cifradas em SQLite na VM, com autenticação
+                    obrigatória.
+                  </p>
+                </div>
+                <button class="btn outline" data-nav="integrations">
+                  Gerir ligações
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="view" id="view-markets" hidden>
+            <div class="section-intro">
+              <h2>Markets</h2>
+              <p>
+                Candles, volume, SMA e cotações provenientes da API. Feed IEX;
+                SIP e Level 2 não presumidos.
+              </p>
+            </div>
+            <div class="panel">
+              <form id="market-form" class="exec-fields">
+                <div>
+                  <label for="market-symbol">Símbolo</label
+                  ><input id="market-symbol" value="AAPL" required />
+                </div>
+                <div>
+                  <label for="market-timeframe">Intervalo</label
+                  ><select id="market-timeframe">
+                    <option>1Min</option>
+                    <option>5Min</option>
+                    <option>1Day</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="market-start">Desde (histórico, opcional)</label
+                  ><input id="market-start" type="date" />
+                </div>
+                <div>
+                  <label for="market-end">Até (histórico, opcional)</label
+                  ><input id="market-end" type="date" />
+                </div>
+                <div>
+                  <label for="market-adjustment">Ajustamento</label>
+                  <select id="market-adjustment">
+                    <option value="raw">Raw (sem ajustes)</option>
+                    <option value="split">Splits</option>
+                    <option value="dividend">Dividendos</option>
+                    <option value="all">Splits + dividendos</option>
+                  </select>
+                </div>
+                <button class="btn primary">Carregar / importar candles</button>
+              </form>
+              <p id="market-status" class="form-message" role="status">
+                Aguarda ligação de dados.
+              </p>
+              <div
+                id="market-chart"
+                class="market-chart"
+                role="img"
+                aria-label="Candles e volume de mercado"
+              ></div>
+              <div id="market-features" class="runtime-summary"></div>
+              <p id="market-quality" class="muted" role="status">Qualidade: sem dados importados.</p>
+            </div>
+            <div class="panel gap-top">
+              <h2>Watchlist</h2>
+              <form id="watchlist-form" class="exec-fields gap-top">
+                <div>
+                  <label for="watchlist-symbols"
+                    >Símbolos separados por vírgulas</label
+                  ><input id="watchlist-symbols" value="AAPL,MSFT,SPY" />
+                </div>
+                <button class="btn outline">Guardar</button
+                ><button id="stream-start" class="btn primary" type="button">
+                  Ligar streaming
+                </button>
+              </form>
+              <p id="watchlist-status" class="form-message"></p>
+            </div>
+          </section>
+          <section class="view" id="view-backtesting" hidden>
+            <div class="section-intro">
+              <h2>Backtesting & Replay</h2>
+              <p>
+                Usa candles reais guardados em Markets ou importa CSV OHLCV.
+                Sinal no fecho, execução na abertura seguinte. Resultados
+                separados de Paper.
+              </p>
+            </div>
+            <div class="panel">
+              <form id="backtest-form" class="key-form">
+                <div class="exec-fields">
+                  <div>
+                    <label for="bt-symbol">Símbolo do histórico</label
+                    ><input id="bt-symbol" value="AAPL" />
+                  </div>
+                  <div>
+                    <label for="bt-cash">Capital simulado</label
+                    ><input
+                      id="bt-cash"
+                      type="number"
+                      value="100000"
+                      min="1"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="bt-fees">Custos (bps)</label
+                    ><input
+                      id="bt-fees"
+                      type="number"
+                      value="0"
+                      min="0"
+                      step="0.1"
+                    />
+                  </div>
+                  <div>
+                    <label for="bt-slippage">Slippage (bps)</label
+                    ><input
+                      id="bt-slippage"
+                      type="number"
+                      value="0"
+                      min="0"
+                      step="0.1"
+                    />
+                  </div>
+                  <div>
+                    <label for="bt-periods">Observações por ano</label
+                    ><input
+                      id="bt-periods"
+                      type="number"
+                      value="98280"
+                      min="1"
+                    />
+                  </div>
+                </div>
+                <label for="bt-file"
+                  >CSV opcional: t,o,h,l,c,v (até 10000 candles)</label
+                ><input id="bt-file" type="file" accept=".csv" />
+                <div class="exec-actions">
+                  <button class="btn primary">Simular estratégia atual</button
+                  ><button id="replay-run" class="btn outline" type="button">
+                    Executar replay
+                  </button>
+                </div>
+                <p id="bt-message" class="form-message" role="status"></p>
+              </form>
+              <div id="bt-result" class="gap-top"></div>
+              <div
+                id="bt-chart"
+                class="svg-chart"
+                role="img"
+                aria-label="Equity simulada"
+              ></div>
+            </div>
+            <div class="panel gap-top">
+              <h2>Comparação de experiências</h2>
+              <div id="bt-comparisons" class="table-wrap gap-top"></div>
+            </div>
+          </section>
+          <section class="view" id="view-portfolio" hidden>
+            <div class="section-intro">
+              <h2>Portfolio · Paper Forward</h2>
+              <p>
+                Posições e snapshots da conta selecionada; métricas apenas com
+                histórico suficiente.
+              </p>
+            </div>
+            <div class="panel">
+              <div id="portfolio-metrics" class="metric-grid"></div>
+              <div id="portfolio-chart" class="svg-chart"></div>
+              <p id="portfolio-note" class="muted gap-top"></p>
+              <div id="portfolio-positions" class="table-wrap"></div>
+            </div>
+            <div class="panel gap-top">
+              <h2>Execuções observadas</h2>
+              <div id="portfolio-fills" class="table-wrap gap-top"></div>
+            </div>
+          </section>
+          <section class="view" id="view-monitor" hidden>
+            <div class="section-intro">
+              <h2>System Monitor</h2>
+              <p>
+                Estado observado, recursos, streams, recuperação, alertas e
+                eventos auditáveis.
+              </p>
+            </div>
+            <div class="panel">
+              <button id="monitor-refresh" class="btn outline">
+                Atualizar monitor
+              </button>
+              <div id="monitor-health" class="gap-top"></div>
+            </div>
+            <div class="panel gap-top">
+              <h2>Alertas operacionais</h2>
+              <div id="monitor-alerts" class="table-wrap gap-top"></div>
+            </div>
+            <div class="panel gap-top">
+              <h2>Audit log · UTC</h2>
+              <input
+                id="audit-filter"
+                class="gap-top"
+                placeholder="Filtrar eventos"
+                aria-label="Filtrar eventos"
+              />
+              <div id="monitor-audit" class="table-wrap gap-top"></div>
+            </div>
+          </section>
+          <footer class="footer">
+            <span
+              >© PRAXIS OS · Interface baseada na identidade visual TailAdmin
+              Free</span
+            ><span
+              >Experimental · Paper Demo · <span id="footer-clock"></span
+            ></span>
+          </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

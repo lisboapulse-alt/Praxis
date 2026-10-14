@@ -1,0 +1,19 @@
+{
+  "project": "PRAXIS OS v0.3 DEMO_UNRESTRICTED",
+  "tested_at": "2026-10-13",
+  "local_tests_passed": 21,
+  "local_tests_failed": 0,
+  "syntax_check": "passed",
+  "health_smoke": "passed",
+  "live_alpaca_authenticated": "not_attempted",
+  "orders_submitted_alpaca": "none",
+  "cloud_deployment": "not_done",
+  "remaining": [
+    "Alpaca Broker Sandbox external auth",
+    "Alpaca Trading Paper external auth",
+    "cTrader Demo implementation",
+    "Cloud deploy",
+    "Ollama local VM",
+    "full streaming events/reconciliation"
+  ]
+}

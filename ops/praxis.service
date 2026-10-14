@@ -1,0 +1,25 @@
+[Unit]
+Description=PRAXIS Paper Trading Engine (NO LIVE)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=praxis
+Group=praxis
+WorkingDirectory=/opt/praxis
+EnvironmentFile=/etc/praxis/praxis.env
+ExecStart=/usr/bin/node /opt/praxis/src/server.mjs
+Restart=on-failure
+RestartSec=35
+UMask=0077
+NoNewPrivileges=true
+ProtectHome=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/praxis
+MemoryMax=750M
+LimitNOFILE=8192
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,194 @@
+[
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/.gitignore",
+    "bytes": 77,
+    "sha256": "67010ede9d4ee30762985c0cf0b6c2362b911f729fcf9e3e26f805bb5d062de7",
+    "lines": 9
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/package.json",
+    "bytes": 412,
+    "sha256": "3ea16fbe8ece9e699982294248f527041f23aa38099d16a31db81c4169d30331",
+    "lines": 13
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/SHA256_MANIFEST.json",
+    "bytes": 2864,
+    "sha256": "e781acb23109f5c9b8e453944fa2eeaec3aa5c602ca1a6247338ab869e4b2f25",
+    "lines": 33
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/VALIDATION_REPORT.json",
+    "bytes": 538,
+    "sha256": "332064664755ce476703f0c15585c7305b739cd670da28862ee58896e3adadf2",
+    "lines": 19
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/netlify.toml",
+    "bytes": 461,
+    "sha256": "3b8ea4d7478aeb2b58f7f0937e9c45a2dfc8631fcef96de6d702eb294f18a255",
+    "lines": 13
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/.env.example",
+    "bytes": 778,
+    "sha256": "4741e5d142f4415bd08249da29d290d6dd2ec8c3c172d954643f99d6b5c140ac",
+    "lines": 15
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/README.md",
+    "bytes": 3588,
+    "sha256": "bbebddc4400a54a561d0b106aff2148117377367aabbd96fe556f18551cc7e16",
+    "lines": 52
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/public/app.js",
+    "bytes": 17906,
+    "sha256": "310e25105a0244190878bcf667bae70c153b2a556c4417d7e125aa727c4e29ac",
+    "lines": 76
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/public/index.html",
+    "bytes": 22468,
+    "sha256": "668d0e9e378d26e166f394eae9f7b1928bd3e66456b5406a70c5f396eabdc695",
+    "lines": 110
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/public/styles.css",
+    "bytes": 18511,
+    "sha256": "ba484733b37f068d36055d7ac59a4cf9b9c58cd8f9218dac9c3de1daed02eb92",
+    "lines": 16
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/ops/Caddyfile.example",
+    "bytes": 254,
+    "sha256": "ab45eea9685f209c267fd63c2ddc42278d43afd292f6edaa852d3e1468d4b7bf",
+    "lines": 10
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/ops/backup.sh",
+    "bytes": 671,
+    "sha256": "1768f56ad2fb8dd4e15cfe27c7049768bbbfc0d595ee9ae30495049fbce28c4b",
+    "lines": 16
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/ops/ollama-setup.sh",
+    "bytes": 590,
+    "sha256": "7f0ce25cc18794221f64e53395668378ff887a8dfb23b2da1440d4e5a5ab59d1",
+    "lines": 13
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/ops/praxis.service",
+    "bytes": 499,
+    "sha256": "9505a486031a791e4dfe47d65b178a822c28402d03abffd022ef5628456a4b22",
+    "lines": 25
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/src/security.mjs",
+    "bytes": 2595,
+    "sha256": "3957ed7c1088ffcf4252161c62d7b404dbf212419fcb9add6c701a37429dff96",
+    "lines": 40
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/src/oms.mjs",
+    "bytes": 7137,
+    "sha256": "050210ebfff2e1678a979ffb5fb516e8709ca6640410a0b65713f4afe41b89ea",
+    "lines": 92
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/src/engine.mjs",
+    "bytes": 5472,
+    "sha256": "da7fa619ae1c80f7eb4f9d69cc5b5b3efb7282a0b35a139253e41dc231911fd5",
+    "lines": 56
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/src/adapters.mjs",
+    "bytes": 5114,
+    "sha256": "aa139e6860ace1bc8e6bf31e42dc647b9976c493cacc7367bdba045334068fb7",
+    "lines": 49
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/src/server.mjs",
+    "bytes": 14949,
+    "sha256": "5616940e2d1649e4750fd1a561d8f54ad1e974eff9311e21e544bb91ac2ea30f",
+    "lines": 101
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/src/db.mjs",
+    "bytes": 3208,
+    "sha256": "5328d02922fd1160c8f29b6b175ae3a3cf8291e900b3e466303747164ce1e4ee",
+    "lines": 40
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/docs/PROMPT_CODEX_FINAL.md",
+    "bytes": 3355,
+    "sha256": "47e116154203037ef9dfd0ba1af22d7f75e0f759042d789b71deb7a27491c8e8",
+    "lines": 21
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/docs/02_CODEX_MASTER_PROMPT.md",
+    "bytes": 17836,
+    "sha256": "44c6eda530f4b0f5b35a15e691ead97250b15782eb4b57e7f027c52707222298",
+    "lines": 130
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/docs/DEPLOY.md",
+    "bytes": 3453,
+    "sha256": "0ad52e32dd539219dc4267cd9724dc1cd6a243da969d829be946203ebc972687",
+    "lines": 33
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/docs/03_CRITERIOS_60_DIAS.md",
+    "bytes": 2999,
+    "sha256": "85eeda5dbe0bdfcdc415504be06357caf072b620fcc89e7cdee81b9f984b9618",
+    "lines": 28
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/docs/ALTERACOES_DEMO_V3.md",
+    "bytes": 2300,
+    "sha256": "63efa167769e54898aaeadff1ae443bae0891548e6f0213f9fd14bd110117626",
+    "lines": 33
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/docs/01_AUDITORIA_E_SIMPLIFICACAO.md",
+    "bytes": 4890,
+    "sha256": "b59cffe6cc2aa0889ffe67bb9d1385e9afcf5447d7ff9c736ce20ac499535d22",
+    "lines": 49
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/docs/STATUS_E_PENDENCIAS.md",
+    "bytes": 3622,
+    "sha256": "657e9184dcaa269bf14748c56396ab0f62f2276b0dbb8a362e8fb5e59a807e93",
+    "lines": 36
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/scripts/netlify-config.mjs",
+    "bytes": 594,
+    "sha256": "77b166f23de4ece1cd9dd6ab74643a92747dde093e417490ad4887f87dad36c6",
+    "lines": 8
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/scripts/smoke.mjs",
+    "bytes": 340,
+    "sha256": "d75085278140016777bd894f8bb8638bffe22559193d11ec612afa947608e7b0",
+    "lines": 3
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/tests/adapters.test.mjs",
+    "bytes": 2129,
+    "sha256": "8c1676a00d259be5f55a01d4e0f5c74ce5faa2839de0ba722cab11a723d738c8",
+    "lines": 23
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/tests/server.test.mjs",
+    "bytes": 3222,
+    "sha256": "d6b7bf819afb1cec1ad036e2ca13a497cc462c070828a33dd1d97823477f7db8",
+    "lines": 22
+  },
+  {
+    "file": "PRAXIS_OS_PRE_CODEX_V3_DEMO/tests/oms.test.mjs",
+    "bytes": 7228,
+    "sha256": "e8529d04e780b724b89e73c4dea2b3693d1cfd667658bfdbe3bf37aadfda90ba",
+    "lines": 64
+  }
+]

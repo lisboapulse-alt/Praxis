@@ -1,0 +1,24 @@
+.env
+.env.*
+!.env.example
+state/
+node_modules/
+*.sqlite*
+*.db
+*.log
+secrets/
+reports/
+test-results/
+playwright-report/
+public/_redirects
+# Credentials and local-only files
+*.pem
+*.p12
+*.pfx
+*.key
+credentials.json
+credentials*.json
+.DS_Store
+.vscode/
+.idea/
+coverage/
