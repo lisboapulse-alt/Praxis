@@ -21,9 +21,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.4,
+      "accuracy": 0.3333333333333333,
       "horizon_min": 60,
-      "n": 5,
+      "n": 6,
       "n_correct": 2,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -51,9 +51,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.6,
+      "accuracy": 0.5,
       "horizon_min": 60,
-      "n": 5,
+      "n": 6,
       "n_correct": 3,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -81,9 +81,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.6,
+      "accuracy": 0.5,
       "horizon_min": 60,
-      "n": 5,
+      "n": 6,
       "n_correct": 3,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -111,9 +111,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.4,
+      "accuracy": 0.3333333333333333,
       "horizon_min": 60,
-      "n": 5,
+      "n": 6,
       "n_correct": 2,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -141,10 +141,10 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.8,
+      "accuracy": 0.8333333333333334,
       "horizon_min": 60,
-      "n": 5,
-      "n_correct": 4,
+      "n": 6,
+      "n_correct": 5,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
       "strategy": "MOM20",
@@ -171,15 +171,15 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.6,
+      "accuracy": 0.6666666666666666,
       "horizon_min": 60,
-      "n": 5,
-      "n_correct": 3,
+      "n": 6,
+      "n_correct": 4,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
       "strategy": "MR30",
       "symbol": "ETH-USD"
     }
   ],
-  "updated_at_utc": "2026-10-16T23:31:23Z"
+  "updated_at_utc": "2026-10-17T04:16:48Z"
 }
