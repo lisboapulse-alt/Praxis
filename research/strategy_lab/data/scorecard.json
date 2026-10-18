@@ -1,9 +1,9 @@
 {
   "scores": [
     {
-      "accuracy": 0.3333333333333333,
+      "accuracy": 0.3,
       "horizon_min": 5,
-      "n": 9,
+      "n": 10,
       "n_correct": 3,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -11,9 +11,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.2222222222222222,
+      "accuracy": 0.2,
       "horizon_min": 15,
-      "n": 9,
+      "n": 10,
       "n_correct": 2,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -21,9 +21,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.15384615384615385,
+      "accuracy": 0.14285714285714285,
       "horizon_min": 60,
-      "n": 13,
+      "n": 14,
       "n_correct": 2,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -31,9 +31,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.5555555555555556,
+      "accuracy": 0.5,
       "horizon_min": 5,
-      "n": 9,
+      "n": 10,
       "n_correct": 5,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -41,9 +41,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.4444444444444444,
+      "accuracy": 0.4,
       "horizon_min": 15,
-      "n": 9,
+      "n": 10,
       "n_correct": 4,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -51,9 +51,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.5384615384615384,
+      "accuracy": 0.5,
       "horizon_min": 60,
-      "n": 13,
+      "n": 14,
       "n_correct": 7,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -61,19 +61,19 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.5555555555555556,
+      "accuracy": 0.6,
       "horizon_min": 5,
-      "n": 9,
-      "n_correct": 5,
+      "n": 10,
+      "n_correct": 6,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
       "strategy": "MR30",
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.7777777777777778,
+      "accuracy": 0.7,
       "horizon_min": 15,
-      "n": 9,
+      "n": 10,
       "n_correct": 7,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -81,9 +81,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.6923076923076923,
+      "accuracy": 0.6428571428571429,
       "horizon_min": 60,
-      "n": 13,
+      "n": 14,
       "n_correct": 9,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -91,9 +91,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.3333333333333333,
+      "accuracy": 0.3,
       "horizon_min": 5,
-      "n": 9,
+      "n": 10,
       "n_correct": 3,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -101,9 +101,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.2222222222222222,
+      "accuracy": 0.2,
       "horizon_min": 15,
-      "n": 9,
+      "n": 10,
       "n_correct": 2,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -111,9 +111,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.23076923076923078,
+      "accuracy": 0.21428571428571427,
       "horizon_min": 60,
-      "n": 13,
+      "n": 14,
       "n_correct": 3,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -121,9 +121,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.5555555555555556,
+      "accuracy": 0.5,
       "horizon_min": 5,
-      "n": 9,
+      "n": 10,
       "n_correct": 5,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -131,9 +131,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.5555555555555556,
+      "accuracy": 0.5,
       "horizon_min": 15,
-      "n": 9,
+      "n": 10,
       "n_correct": 5,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -141,9 +141,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.6923076923076923,
+      "accuracy": 0.6428571428571429,
       "horizon_min": 60,
-      "n": 13,
+      "n": 14,
       "n_correct": 9,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -151,29 +151,29 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.4444444444444444,
+      "accuracy": 0.5,
       "horizon_min": 5,
-      "n": 9,
-      "n_correct": 4,
+      "n": 10,
+      "n_correct": 5,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
       "strategy": "MR30",
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.8888888888888888,
+      "accuracy": 0.9,
       "horizon_min": 15,
-      "n": 9,
-      "n_correct": 8,
+      "n": 10,
+      "n_correct": 9,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
       "strategy": "MR30",
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.7692307692307693,
+      "accuracy": 0.7142857142857143,
       "horizon_min": 60,
-      "n": 13,
+      "n": 14,
       "n_correct": 10,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -181,5 +181,5 @@
       "symbol": "ETH-USD"
     }
   ],
-  "updated_at_utc": "2026-10-18T14:32:14Z"
+  "updated_at_utc": "2026-10-18T18:02:54Z"
 }
