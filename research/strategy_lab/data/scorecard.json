@@ -21,9 +21,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.15,
+      "accuracy": 0.14285714285714285,
       "horizon_min": 60,
-      "n": 20,
+      "n": 21,
       "n_correct": 3,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -51,9 +51,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.5,
+      "accuracy": 0.47619047619047616,
       "horizon_min": 60,
-      "n": 20,
+      "n": 21,
       "n_correct": 10,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -81,9 +81,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.6,
+      "accuracy": 0.5714285714285714,
       "horizon_min": 60,
-      "n": 20,
+      "n": 21,
       "n_correct": 12,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -111,9 +111,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.2,
+      "accuracy": 0.19047619047619047,
       "horizon_min": 60,
-      "n": 20,
+      "n": 21,
       "n_correct": 4,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -141,9 +141,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.55,
+      "accuracy": 0.5238095238095238,
       "horizon_min": 60,
-      "n": 20,
+      "n": 21,
       "n_correct": 11,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -171,9 +171,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.6,
+      "accuracy": 0.5714285714285714,
       "horizon_min": 60,
-      "n": 20,
+      "n": 21,
       "n_correct": 12,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -181,5 +181,5 @@
       "symbol": "ETH-USD"
     }
   ],
-  "updated_at_utc": "2026-10-20T23:49:18Z"
+  "updated_at_utc": "2026-10-21T04:35:44Z"
 }
