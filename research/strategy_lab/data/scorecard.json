@@ -21,9 +21,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.125,
+      "accuracy": 0.12121212121212122,
       "horizon_min": 60,
-      "n": 32,
+      "n": 33,
       "n_correct": 4,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -51,9 +51,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.4375,
+      "accuracy": 0.42424242424242425,
       "horizon_min": 60,
-      "n": 32,
+      "n": 33,
       "n_correct": 14,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -81,10 +81,10 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.53125,
+      "accuracy": 0.5454545454545454,
       "horizon_min": 60,
-      "n": 32,
-      "n_correct": 17,
+      "n": 33,
+      "n_correct": 18,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
       "strategy": "MR30",
@@ -111,9 +111,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.1875,
+      "accuracy": 0.18181818181818182,
       "horizon_min": 60,
-      "n": 32,
+      "n": 33,
       "n_correct": 6,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -141,9 +141,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.4375,
+      "accuracy": 0.42424242424242425,
       "horizon_min": 60,
-      "n": 32,
+      "n": 33,
       "n_correct": 14,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -171,9 +171,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.53125,
+      "accuracy": 0.5151515151515151,
       "horizon_min": 60,
-      "n": 32,
+      "n": 33,
       "n_correct": 17,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -181,5 +181,5 @@
       "symbol": "ETH-USD"
     }
   ],
-  "updated_at_utc": "2026-10-25T11:17:06Z"
+  "updated_at_utc": "2026-10-25T16:06:01Z"
 }
