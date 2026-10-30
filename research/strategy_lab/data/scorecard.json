@@ -21,9 +21,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.12195121951219512,
+      "accuracy": 0.11904761904761904,
       "horizon_min": 60,
-      "n": 41,
+      "n": 42,
       "n_correct": 5,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -51,9 +51,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.43902439024390244,
+      "accuracy": 0.42857142857142855,
       "horizon_min": 60,
-      "n": 41,
+      "n": 42,
       "n_correct": 18,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -81,9 +81,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.5365853658536586,
+      "accuracy": 0.5238095238095238,
       "horizon_min": 60,
-      "n": 41,
+      "n": 42,
       "n_correct": 22,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -111,9 +111,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.1951219512195122,
+      "accuracy": 0.19047619047619047,
       "horizon_min": 60,
-      "n": 41,
+      "n": 42,
       "n_correct": 8,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -141,9 +141,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.3902439024390244,
+      "accuracy": 0.38095238095238093,
       "horizon_min": 60,
-      "n": 41,
+      "n": 42,
       "n_correct": 16,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -171,9 +171,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.4878048780487805,
+      "accuracy": 0.47619047619047616,
       "horizon_min": 60,
-      "n": 41,
+      "n": 42,
       "n_correct": 20,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -181,5 +181,5 @@
       "symbol": "ETH-USD"
     }
   ],
-  "updated_at_utc": "2026-10-30T19:18:15Z"
+  "updated_at_utc": "2026-10-30T23:40:31Z"
 }
