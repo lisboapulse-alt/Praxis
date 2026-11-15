@@ -21,9 +21,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.10909090909090909,
+      "accuracy": 0.10714285714285714,
       "horizon_min": 60,
-      "n": 55,
+      "n": 56,
       "n_correct": 6,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -51,9 +51,9 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.4909090909090909,
+      "accuracy": 0.48214285714285715,
       "horizon_min": 60,
-      "n": 55,
+      "n": 56,
       "n_correct": 27,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -81,10 +81,10 @@
       "symbol": "BTC-USD"
     },
     {
-      "accuracy": 0.5818181818181818,
+      "accuracy": 0.5892857142857143,
       "horizon_min": 60,
-      "n": 55,
-      "n_correct": 32,
+      "n": 56,
+      "n_correct": 33,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
       "strategy": "MR30",
@@ -111,9 +111,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.16363636363636364,
+      "accuracy": 0.16071428571428573,
       "horizon_min": 60,
-      "n": 55,
+      "n": 56,
       "n_correct": 9,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -141,9 +141,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.4,
+      "accuracy": 0.39285714285714285,
       "horizon_min": 60,
-      "n": 55,
+      "n": 56,
       "n_correct": 22,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -171,9 +171,9 @@
       "symbol": "ETH-USD"
     },
     {
-      "accuracy": 0.4727272727272727,
+      "accuracy": 0.4642857142857143,
       "horizon_min": 60,
-      "n": 55,
+      "n": 56,
       "n_correct": 26,
       "note": "Horizons overlap: observations not independent; no winner declaration",
       "provider": "coinbase-exchange",
@@ -181,5 +181,5 @@
       "symbol": "ETH-USD"
     }
   ],
-  "updated_at_utc": "2026-11-14T22:17:31Z"
+  "updated_at_utc": "2026-11-15T02:35:27Z"
 }
